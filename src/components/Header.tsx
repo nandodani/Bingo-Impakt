@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <header className="app-header">
       <div className="header-content">
-        <h1>{streamerName}'s Bingo</h1>
+        <h1>{streamerName}&apos;s Bingo</h1>
       </div>
     </header>
   );

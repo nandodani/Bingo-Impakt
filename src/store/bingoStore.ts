@@ -3,11 +3,11 @@ import { persist } from 'zustand/middleware';
 import { BingoAction } from '../types';
 
 const defaultActions = [
-  "'Lamentável' x3",
+  `&apos;Lamentável&apos; x3`,
   "A Gi mudou o alerta de sub x3",
   "Jogou-se um Sultz Like",
   "O Impakt bebeu café x6",
-  "O Impakt disse 'A tua mãe' pelo menos 2x",
+  `O Impakt disse &apos;A tua mãe&apos; pelo menos 2x`,
   "Os trailers duraram mais de 2 horas",
   "Atingimos o sub goal",
   "O Impakt vestiu o fato de T-Rex",
@@ -17,8 +17,8 @@ const defaultActions = [
   "A Gi levou outra multa",
   "O Garcia perguntou se podia montar a Freya",
   "Coop com o Garcia",
-  "O chat spammou o emote 'Tirano'",
-  "O chat spammou o emote 'Parabéns'",
+  `O chat spammou o emote &apos;Tirano&apos;`,
+  `O chat spammou o emote &apos;Parabéns&apos;`,
   "iiiiiiiiiiiiii aaaaaaaa",
   "A stream começou antes das 9h30m",
   "O dia do pai foi mencionado",
@@ -28,12 +28,12 @@ const defaultActions = [
   "Meu pai estás sofrendooooo...",
   "A RTP Arena mandou os parabéns",
   "O Pai tá online?",
-  "Jogou-se 'Drive is Hard' ou algo do género",
+  `Jogou-se &apos;Drive is Hard&apos; ou algo do género`,
   "O Impakt está a usar os chinelos do SPAIder-Man",
   "10cm",
-  "O Impakt disse 'Eu não faço anos hoje'",
-  "O Impakt disse 'Eu não sou vosso pai'",
-  "Ouviu-se 'Paizinho'",
+  `O Impakt disse &apos;Eu não faço anos hoje&apos;`,
+  `O Impakt disse &apos;Eu não sou vosso pai&apos;`,
+  `Ouviu-se &apos;Paizinho&apos;`,
   "O Impakt brincou com a Freya",
   "A Gi fez uma festa na Freya",
   "Houve um jogo desisntalado",
@@ -64,7 +64,7 @@ const useBingoStore = create(
       generateCard: () => {
         const allActions = [...get().actions, ...get().customActions];
         const shuffledActions = allActions.sort(() => Math.random() - 0.5);
-        let newCard:BingoAction[] = [];
+        const newCard:BingoAction[] = [];
         const uniqueActions = new Set();
         for (const action of shuffledActions) {
             if (!uniqueActions.has(action)) {
@@ -115,7 +115,7 @@ const useBingoStore = create(
           if(updatedCard.length < 25){
              const allActions = [...updatedActions, ...updatedCustomActions];
              const shuffledActions = allActions.sort(() => Math.random() - 0.5);
-             let newCard:BingoAction[] = [];
+             const newCard:BingoAction[] = [];
               const uniqueActions = new Set();
               for (const action of shuffledActions) {
                   if (!uniqueActions.has(action)) {

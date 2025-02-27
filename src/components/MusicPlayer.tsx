@@ -52,6 +52,7 @@ const MusicPlayer = () => {
         document.removeEventListener('click', handleUserInteraction);
         document.removeEventListener('touchstart', handleUserInteraction);
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (
