@@ -1,0 +1,228 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 0%; /* Pure Black */
+    --foreground: 0 0% 98%; /* Near White for Text */
+
+    --muted: 0 0% 10%; /* Slightly Lighter Black */
+    --muted-foreground: 0 0% 60%; /* Grayish Text */
+
+    --popover: 0 0% 0%; /* Pure Black */
+    --popover-foreground: 0 0% 98%; /* Near White */
+
+    --card: 0 0% 0%; /* Pure Black */
+    --card-foreground: 0 0% 98%; /* Near White */
+
+    --border: 0 0% 10%; /* Slightly Lighter Black */
+    --input: 0 0% 10%; /* Slightly Lighter Black */
+
+    --primary: 39 100% 50%; /* Orange */
+    --primary-foreground: 0 0% 0%; /* Black on Orange */
+
+    --secondary: 0 0% 10%; /* Slightly Lighter Black */
+    --secondary-foreground: 0 0% 98%; /* Near White */
+
+    --accent: 0 0% 10%; /* Slightly Lighter Black */
+    --accent-foreground: 0 0% 98%; /* Near White */
+
+    --destructive: 0 84.2% 60.2%; /* Red */
+    --destructive-foreground: 0 0% 98%; /* Near White */
+
+    --ring: 39 100% 50%; /* Orange */
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 98%;
+
+    --muted: 0 0% 10%;
+    --muted-foreground: 0 0% 60%;
+
+    --popover: 0 0% 0%;
+    --popover-foreground: 0 0% 98%;
+
+    --card: 0 0% 0%;
+    --card-foreground: 0 0% 98%;
+
+    --border: 0 0% 10%;
+    --input: 0 0% 10%;
+
+    --primary: 39 100% 50%;
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 0 0% 98%;
+
+    --accent: 0 0% 10%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --ring: 39 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+body {
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #000; /* Main Black Background */
+  color: #fff;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  max-width: 100vw;
+  margin: 0 auto;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  width: 90vw;
+}
+
+.bingo-card {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 5px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.bingo-square {
+  background-color: #1a1a1a; /* Dark Gray */
+  border: 1px solid #333; /* Dark Border */
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  height: 120px;
+  width: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.bingo-square:hover {
+  background-color: #333; /* Lighter on Hover */
+}
+
+.bingo-square.marked {
+  background-color: #ff9900; /* Orange */
+  color: #000; /* Black Text on Orange */
+  font-weight: bold;
+}
+
+.custom-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.add-action {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+
+.add-action input {
+  flex: 1;
+  background-color: #1a1a1a; /* Dark Gray */
+  color: #fff;
+  border: 1px solid #333; /* Dark Border */
+  padding: 8px;
+}
+
+.custom-actions ul {
+  list-style: none;
+  padding: 0;
+}
+
+.custom-actions li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1a1a1a; /* Dark Gray */
+  padding: 8px;
+  margin-bottom: 5px;
+  border-radius: 4px;
+}
+
+.app-header {
+  width: 100%;
+  background-color: #000; /* Black Header */
+  color: #fff;
+  padding: 20px;
+  border-bottom: #ff9900 solid 1px; /* Orange Bottom Border */
+}
+
+.app-header .header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.music-player {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 100;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: #ff9900 solid 1px; /* Orange Border */
+  background: black;
+  padding: 5px;
+}
+
+.music-player button {
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
