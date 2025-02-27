@@ -37,6 +37,7 @@ const defaultActions = [
   "O Impakt brincou com a Freya",
   "A Gi fez uma festa na Freya",
   "Houve um jogo desisntalado",
+  "O BusteryayaPT ofereceu um sub ao Ronaldo",
 ];
 
 interface BingoState {
